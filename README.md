@@ -1,42 +1,27 @@
-# python-zip
+# python-enumerate
 
-> Iterate through Iterables together, until all or one of the iterables are over
+> Enumerate through an Iterable and get the index
 
 Python's build-in function in JS.
 
 # Install
 
 ```bash
-npm i python-zip
+npm i python-enumerate
 ```
 
 # Usage
 
-Default export is the "classic" zip function (quitting when one of the iterables is over).
-
-Another export is the `zipLongest` function, who iterates until all the iterables are over.
+Takes one iterable, and return a tuple of [index, current_element].
+You can specify a base index (it will NOT change the order / beginning of where the iteration starts in iterable).
 
 ## Default
 ```ts
-import zip from 'python-zip';
+import enumerate from 'python-enumerate';
 
 const a = [1, 3, 5];
-const b = [2, 4, 6];
 
-for (const [i, j] of zip(a, b)) {
-    console.log(i, j); // => 1 2 then 3 4 then 5 6
+for (const [i, v] of enumerate(a)) {
+    console.log(i, v); // => 0 1 then 1 4 then 2 6
 }
 ```
-
-## Longest
-```ts
-import { zipLongest } from 'python-zip';
-
-const a = [1, 3, 5, 7, 9];
-const b = [2, 4, 6];
-
-for (const [i, j] of zipLongest(a, b)) {
-    console.log(i, j); // => 1 2 then 3 4 then 5 6 then 7 undefined then 9 undefined
-}
-```
-
