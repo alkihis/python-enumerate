@@ -22,6 +22,6 @@ import enumerate from 'python-enumerate';
 const a = [1, 3, 5];
 
 for (const [i, v] of enumerate(a)) {
-    console.log(i, v); // => 0 1 then 1 4 then 2 6
+    console.log(i, v); // => 0 1 then 1 3 then 2 5
 }
 ```
